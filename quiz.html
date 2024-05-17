@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <style>
+      body {
+        background-color: royalblue;
+      }
+      h1 {
+        font-size: 35px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: white;
+      }
+    </style>
+    <script>
+      //  const prompt = require("prompt-sync");
+
+      const jogador = prompt("Qual o seu nome? ");
+
+      let op = 3;
+      let pontuacao = 0;
+      let resposta;
+
+      function atualizarPontuacao(acertou) {
+        if (acertou) {
+          pontuacao++;
+        }
+      }
+      function exibirMensagem(acertou, mensagemAcerto, mensagemErro) {
+        if (acertou) {
+          alert(mensagemAcerto);
+        } else {
+          alert(mensagemErro);
+        }
+      }
+      while (op != 0) {
+        op = parseInt(
+          prompt(
+            "Qual tema você deseja jogar?  1 - Livros  2 - Comida  3 - Música 0 - Sair "
+          )
+        );
+
+        switch (op) {
+          case 1:
+            resposta = prompt(
+              "J. K. Rowling escrevu Harry Potter. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta. Foi J. K. Rowling.");
+            }
+            resposta = prompt(
+              "O livro '1984' foi escrito por George Orwell. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta.");
+            }
+            resposta = prompt(
+              "Orgulho e Preconceito' foi escrito por Jane Austen. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta. A autora é Jane Austen.");
+            }
+            break;
+
+          case 2:
+            resposta = prompt(
+              "O sushi é uma comida tradicional japonesa. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert(
+                "Resposta incorreta. O sushi é uma comida tradicional japonesa."
+              );
+            }
+            resposta = prompt(
+              "A pizza foi inventada na França.  Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "falso") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta. A pizza foi inventada na Itália.");
+            }
+            resposta = prompt(
+              "Guacamole é um prato típico da Espanha. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "falso") {
+              alert("Parabéns!");
+              pontuacao++;
+            } else {
+              console.log(
+                "Resposta incorreta. Guacamole é um prato típico do México."
+              );
+            }
+            break;
+
+          case 3:
+            resposta = prompt(
+              "Os pilares da música são: Melodia, Ritmo e Harmonia. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta.");
+            }
+            resposta = prompt(
+              "O aparelho usado para marcar o tempo , é o Diapasão. Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "verdadeiro") {
+              alert("Resposta Incorreta!");
+            } else {
+              mensagemAcerto: alert("Você acertou.");
+              pontuacao++;
+            }
+            resposta = prompt(
+              "A sigla da nota SOL é F . Verdadeiro ou falso? "
+            );
+            if (resposta.toLowerCase() === "falso") {
+              mensagemAcerto: alert("Parabéns!");
+              pontuacao++;
+            } else {
+              alert("Resposta incorreta. A sigla da nota SOL é G.");
+            }
+            break;
+
+            function encerrarJogo() {
+              alert(
+                `Obrigado por jogar, ${jogador}! Sua pontuação foi: ${pontuacao}`
+              );
+              op = 0;
+            }
+        }
+      }
+
+      alert(`Obrigado por jogar, ${jogador}! Sua pontuação foi: ${pontuacao}`);
+    </script>
+  </body>
+</html>
